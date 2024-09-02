@@ -8,3 +8,15 @@
 .samim-font {
     font-family: 'samim';
 } 
+
+@font-face {
+    font-family: samimfd;
+    src:
+        url("Farsi-Digits/Samim-FD.ttf") format("truetype"),
+        url("Farsi-Digits/Samim-FD.woff") format("woff");
+}
+
+.samim-fd-font {
+    font-family: 'samimfd';
+    direction: rtl;
+} 

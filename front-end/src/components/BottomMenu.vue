@@ -15,13 +15,16 @@
             <p class="text-xs">خرید شماره</p>
         </div>
         <div class="bg-green-800 flex flex-col items-center relative justify-center h-full py-2 gap-1 w-1/5 rounded-s-sm">
-            <IconUser/>
-            <p class="text-xs">نمایه کاربری</p>
+            <IconSmartPhone/>
+            <p class="text-xs">شماره ها</p>
             <div class="rounded-e-full absolute bg-slate-900 -left-8 w-10 h-full"></div>
         </div>
-        <div class="bg-green-800 flex flex-col items-center justify-center h-full py-2 gap-1 w-1/5">
-            <IconUser/>
-            <p class="text-xs">نمایه کاربری</p>
+        <div class="bg-green-800 flex flex-col items-center justify-center h-full py-2 gap-1 w-1/5 samim-fd-font">
+            <IconWallet/>
+            <p class="text-xs">
+                {{ money }} 
+                تومان
+            </p>
         </div>
     </div>
 
@@ -32,5 +35,13 @@
 import IconUser from "../components/icons/IconUser.vue"
 import IconHistory from "../components/icons/IconHistory.vue"
 import IconSimCard from "../components/icons/IconSimCard.vue"
+import IconSmartPhone from "../components/icons/IconSmartPhone.vue"
+import IconContactsPhone from "../components/icons/IconContactsPhone.vue"
+import IconWallet from "../components/icons/IconWallet.vue"
+
+import { ref } from 'vue'
+
+const nFormat = new Intl.NumberFormat(undefined);
+const money = ref(nFormat.format(52000))
 
 </script>
