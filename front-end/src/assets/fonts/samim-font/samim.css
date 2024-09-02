@@ -1,0 +1,10 @@
+@font-face {
+    font-family: samim;
+    src:
+        url("Samim.ttf") format("truetype"),
+        url("Samim.woff") format("woff");
+}
+
+.samim-font {
+    font-family: 'samim';
+} 
