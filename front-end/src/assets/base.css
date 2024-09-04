@@ -2,3 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities{
+    .box-shadow{
+        box-shadow: 0 0px 10px purple;
+    }
+
+    .box-shadow-bottom-button {
+        box-shadow: 0px 0px 10px 2px purple;
+    }
+
+    .box-shadow-bottom-button-buy {
+        box-shadow: 0px 0px 10px 2px rgb(194 65 12);
+    }
+}

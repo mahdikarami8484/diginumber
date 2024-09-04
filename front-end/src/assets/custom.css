@@ -1,3 +1,5 @@
+@import url(animatins.css);
+
 .neon-text {
     color: #fff;
     text-shadow:
@@ -11,12 +13,8 @@
       0 0 151px #0fa;
 }
 
-.box-shadow-top{
-  box-shadow: 0 0px 10px green;
-}
-
 .box-shadow-bottom{
-  box-shadow: 0 3px 10px -2px green;
+  box-shadow: 0 3px 10px -2px rgb(44, 44, 44);
 }
 
 .box-shadow-bottom:hover{
@@ -27,6 +25,4 @@
   box-shadow: 0 0px 10px -2px green;
 }
 
-.box-shadow-bottom-button {
-  box-shadow: -1px 0px 10px -1px green;
-}
+

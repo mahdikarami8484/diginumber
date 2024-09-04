@@ -1,34 +1,49 @@
 <template>
     <div>
-        <div class="text-white w-10/12 mt-44 m-auto bg-green-800 p-4 rounded-t-sm box-shadow-top">
-            <div class="flex flex-row-reverse justify-between items-center">
+        <div class="text-white w-full mt-24">
+            <div class="bg-purple-900 rounded-md p-4 w-11/12 mt-6 mx-auto flex flex-col items-end  duration-300 hover:box-shadow hover:scale-105 load-component">
                 <div class="rounded-full flex flex-row-reverse items-center gap-3"> 
-                    <img class="rounded-full w-20 h-20" src="https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?cs=srgb&dl=pexels-aronvisuals-1743165.jpg&fm=jpg" alt="profile">
-                    <p class="samim-font mt-1"> {{ first_name + last_name }} </p>
-                </div>
-                <div class="flex flex-col justify-self-end gap-1">
-                    <p class="">id: {{  user_id  }}</p>
+                    <img class="rounded-full w-16 h-16" src="https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?cs=srgb&dl=pexels-aronvisuals-1743165.jpg&fm=jpg" alt="profile">
+                    <div class="flex flex-col gap-1 mt-4">
+                        <p dir='rtl' class="samim-font mt-1"> {{ first_name + last_name }} </p>
+                        <div dir='rtl' class="flex justify-center gap-1">
+                            <p class="text-xs samim-font">شناسه کاربری : </p>
+                            <p class="text-xs">{{  user_id  }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div dir="rtl" class="flex flex-col rtl gap-5 mt-12">
-                <div class="flex items-center gap-2">
-                    <p class="samim-font">نام کاربری : </p>
-                    <p> {{ username }}@ </p>
-                </div>
-                
-                <div class="flex items-center gap-2">
+            <div class="bg-purple-900 rounded-md p-4 w-11/12 mt-12 mx-auto flex flex-col items-end hover:scale-105 duration-300 hover:box-shadow load-component">
+                    <div dir='rtl' class="flex items-center gap-2">
+                        <IconUser class="-mt-1"/>
+                        <p class="samim-font">نام کاربری : </p>
+                        <p :class="username == null ? 'samim-font' : ''"> {{ username == null ? 'بدون نام کاربری' : username + '@' }} </p>
+                    </div>
+            </div>
+
+            <div class="bg-purple-900 rounded-md p-4 w-11/12 mt-6 mx-auto flex flex-col items-end duration-300 hover:box-shadow load-component hover:scale-105">
+                <div dir='rtl' class="flex items-center gap-2">
+                    <IconPhone class='-mt-1'/>
                     <p class="samim-font">شماره موبایل : </p>
                     <p> 09132867898 </p>
                 </div>
             </div>
+
+           
+            <div class="bg-purple-900 w-6/12 flex justify-center items-center flex-row-reverse gap-2 mt-24 duration-300 hover:bg-purple-950 hover:scale-105 p-4 text-white m-auto rounded-md cursor-pointer group hover:box-shadow load-component">
+                <IconSupport class="duration-300"/>
+                <p class="samim-font duration-300">پشتیبانی</p>
+            </div>
         </div>
-        <div class="bg-green-900 w-10/12 hover:bg-green-950 text-center p-4 text-white m-auto rounded-b-sm cursor-pointer box-shadow-bottom group">
-            <p class="samim-font group-hover:scale-110">پشتیبانی</p>
-        </div>
+
     </div> 
 </template>    
 
 <script setup>
+    import IconSupport from '@/components/icons/IconSupport.vue';
+    import IconUser from '@/components/icons/IconUser.vue';
+    import IconPhone from '@/components/icons/IconPhone.vue';
+
     const web_app = window.Telegram.WebApp;
     const init_data_unsafe = web_app.initDataUnsafe;
     const user = init_data_unsafe.user;
