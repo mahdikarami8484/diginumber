@@ -1,6 +1,6 @@
 <template>
     
-    <div class="text-white w-screen flex fixed items-center bottom-0 samim-font h-16 shadow-md">
+    <div class="bg-slate-900 z-30 text-white w-screen flex fixed items-center bottom-0 samim-font h-16 shadow-md">
         <router-link to="/profile" class="bg-purple-900 flex flex-col justify-center rounded-t-md items-center h-full py-2 gap-1 w-1/5 hover:scale-115 hover:rounded-md cursor-pointer hover:bg-purple-950 duration-500 hover:box-shadow-bottom-button load-bottom-menu" :class="route_name == 'profile' ? 'rounded-md scale-115 bg-purple-950 box-shadow-bottom-button' : ''">
             <IconUser/>
             <p class="text-xs">نمایه کاربری</p>
@@ -12,7 +12,7 @@
             <div class="rounded-s-full absolute bg-slate-900 -right-8 w-10 h-full hover:"></div>
         </router-link>
 
-        <router-link to="/buy" class="bg-orange-800 z-10 flex flex-col items-center justify-center h-full py-2 gap-1 w-1/5 rounded-full scale-x-105 hover:scale-110 cursor-pointer hover:bg-orange-700 duration-500 load-bottom-menu hover:box-shadow-bottom-button-buy" :class="route_name == 'buy' ? 'scale-110 bg-orange-700 box-shadow-bottom-button-buy' : ''">
+        <router-link to="/buy" class=" z-10 flex flex-col items-center justify-center h-full py-2 gap-1 w-1/5 rounded-full scale-x-105 hover:scale-110 cursor-pointer hover:bg-orange-700 duration-500 load-bottom-menu hover:box-shadow-bottom-button-buy" :class="route_name == 'buy' ? 'scale-110 bg-orange-700 box-shadow-bottom-button-buy' : 'bg-orange-800'">
             <IconSimCard/>
             <p class="text-xs">خرید شماره</p>
         </router-link>

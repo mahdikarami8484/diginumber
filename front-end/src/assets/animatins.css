@@ -16,22 +16,6 @@
     scale: 105%;
 }
 
-.load-component:nth-child(1){
-    animation-delay: 0s;
-}
-
-.load-component:nth-child(2){
-    animation-delay: 0.3s;
-}
-
-.load-component:nth-child(3){
-    animation-delay: 0.6s;
-}
-
-.load-component:nth-child(4){
-    animation-delay: 0.9s;
-}
-
 @keyframes load-bottom-menu {
     from { transform: translateX(200px); opacity: 0.8};
     99% { opacity: 1 }
@@ -67,4 +51,48 @@
 
 .load-bottom-menu:nth-child(5){
     animation-delay: 1.2s;
+}
+
+
+@keyframes spin {
+    from { transform: rotateZ(0deg); }
+    to { transform: rotateZ(360deg);}
+}
+
+.spin {
+    animation-name: spin;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+}
+
+@keyframes open-dialog-anim {
+    from { scale: 0; display: none;}
+    to { scale: 1 ; display: absolute;}
+}
+
+
+@keyframes close-dialog-anim {
+    from { scale: 1; display: absolute;}
+    50% { scale: 0.5 }
+    to { scale: 0; display: none;}
+}
+
+.open-dialog-anim {
+    animation-name: open-dialog-anim;
+    animation-fill-mode: forwards;
+    animation-duration: 0.6s;
+    scale: 0;
+    animation-timing-function: ease-out;
+}
+
+
+.close-dialog-anim {
+    animation-name: open-dialog-anim;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    scale: 1;
+    animation-timing-function: ease-out;
+    animation-direction: reverse;
 }
