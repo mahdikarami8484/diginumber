@@ -36,6 +36,7 @@
                 <p class="samim-font duration-300">پشتیبانی</p>
             </div>
         </div>
+        {{ user }}
     </div> 
 </template>    
 

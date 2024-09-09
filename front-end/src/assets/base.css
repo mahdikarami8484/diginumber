@@ -22,4 +22,13 @@
     .dialog-shadow {
         box-shadow: 0 1px 20px 3px rgb(54, 0, 54);
     }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+   /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+  }
 }
