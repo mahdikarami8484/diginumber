@@ -6,9 +6,9 @@
             <p class="text-xs">نمایه کاربری</p>
         </router-link>
         
-        <router-link to="/history" class="bg-purple-900 flex flex-col items-center rounded-t-md justify-center h-full py-2 gap-1 w-1/5 relative rounded-e-sm hover:scale-105 hover:rounded-t-md cursor-pointer hover:bg-purple-950 duration-500 ml-2 hover:box-shadow-bottom-button load-bottom-menu" :class="route_name == 'history' ? 'rounded-t-md scale-105 bg-purple-950 box-shadow-bottom-button' : ''">
-            <IconHistory/>
-            <p class="text-xs">تاریخچه</p>
+        <router-link to="/message" class="bg-purple-900 flex flex-col items-center rounded-t-md justify-center h-full py-2 gap-1 w-1/5 relative rounded-e-sm hover:scale-105 hover:rounded-t-md cursor-pointer hover:bg-purple-950 duration-500 ml-2 hover:box-shadow-bottom-button load-bottom-menu" :class="route_name == 'message' ? 'rounded-t-md scale-105 bg-purple-950 box-shadow-bottom-button' : ''">
+            <IconMessage/>
+            <p class="text-xs">پیام ها</p>
             <div class="rounded-s-full absolute bg-slate-900 -right-8 w-10 h-full hover:"></div>
         </router-link>
 
@@ -42,6 +42,7 @@ import IconSimCard from "../components/icons/IconSimCard.vue"
 import IconSmartPhone from "../components/icons/IconSmartPhone.vue"
 import IconContactsPhone from "../components/icons/IconContactsPhone.vue"
 import IconWallet from "../components/icons/IconWallet.vue"
+import IconMessage from "./icons/IconMessage.vue"
 
 import { ref } from 'vue'
 import {useRoute} from 'vue-router'

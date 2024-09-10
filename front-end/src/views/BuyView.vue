@@ -15,7 +15,7 @@
                 <p class="samim-font">تعداد</p>
             </div>
         </div>
-        <div dir="rtl" v-once class="w-11/12 m-auto flex text-white p-4 py-5 rounded-md items-center justify-start gap-7 hover:box-shadow mt-2 load-component cursor-pointer relative duration-300" :style="'animation-delay: '+3*(loaded_component++/10 - 0.1)+'s'" v-for="(number, i) in numbers" :class="i % 2 == 0 ? 'bg-purple-700' : 'bg-purple-800'">
+        <div dir="rtl" class="w-11/12 m-auto flex text-white p-4 py-5 rounded-md items-center justify-start gap-7 hover:box-shadow mt-2 load-component cursor-pointer relative duration-300" :style="'animation-delay: '+3*(index*0.1)+'s'" v-for="(number, index) in numbers" :class="index % 2 == 0 ? 'bg-purple-700' : 'bg-purple-800'" :key="index">
             <div class="flex gap-2 justify-center">
                 
                 <component class="w-6 h-6 rounded-md" :is="flags_component[number['flag']]" />
@@ -25,7 +25,7 @@
                 <p class="samim-fd-font">{{ nFormat.format(number['price']) }}</p>
                 <p class="samim-font"> تومان</p>
             </div>
-            <div class="flex gap-1 justify-center">
+            <div class="flex gap-1 justify-center -mr-4">
                 <p class="samim-fd-font">{{ nFormat.format(number['availbale']) }}</p>
                 <p class="samim-font"> تا </p>
             </div>
@@ -53,7 +53,7 @@
 
     const nFormat = new Intl.NumberFormat(undefined);
 
-    var numbers = '{\"numbers\":[{\"country_name\":\"ایران\",\"flag\":\"ir\",\"availbale\":1000,\"country_code\":\"+98\",\"price\":10000},{\"country_name\":\"آلمان\",\"flag\":\"de\",\"availbale\":100,\"country_code\":\"+1\",\"price\":25000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"ad\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000}]}';
+    var numbers = '{\"numbers\":[{\"country_name\":\"ایران\",\"flag\":\"ir\",\"availbale\":1000,\"country_code\":\"+98\",\"price\":10000},{\"country_name\":\"آلمان\",\"flag\":\"de\",\"availbale\":100,\"country_code\":\"+49\",\"price\":25000},{\"country_name\":\"آمریکا\",\"flag\":\"us\",\"availbale\":10,\"country_code\":\"+1\",\"price\":50000},{\"country_name\":\"ژاپن\",\"flag\":\"jp\",\"availbale\":50,\"country_code\":\"+81\",\"price\":45000},{\"country_name\":\"فرانسه\",\"flag\":\"fr\",\"availbale\":200,\"country_code\":\"+33\",\"price\":30000},{\"country_name\":\"کانادا\",\"flag\":\"ca\",\"availbale\":30,\"country_code\":\"+1\",\"price\":40000},{\"country_name\":\"استرالیا\",\"flag\":\"au\",\"availbale\":25,\"country_code\":\"+61\",\"price\":38000},{\"country_name\":\"انگلستان\",\"flag\":\"gb\",\"availbale\":75,\"country_code\":\"+44\",\"price\":35000},{\"country_name\":\"چین\",\"flag\":\"cn\",\"availbale\":150,\"country_code\":\"+86\",\"price\":22000},{\"country_name\":\"هند\",\"flag\":\"in\",\"availbale\":500,\"country_code\":\"+91\",\"price\":15000},{\"country_name\":\"روسیه\",\"flag\":\"ru\",\"availbale\":120,\"country_code\":\"+7\",\"price\":33000},{\"country_name\":\"برزیل\",\"flag\":\"br\",\"availbale\":80,\"country_code\":\"+55\",\"price\":31000},{\"country_name\":\"مکزیک\",\"flag\":\"mx\",\"availbale\":60,\"country_code\":\"+52\",\"price\":28000},{\"country_name\":\"سوئد\",\"flag\":\"se\",\"availbale\":40,\"country_code\":\"+46\",\"price\":36000},{\"country_name\":\"نروژ\",\"flag\":\"no\",\"availbale\":35,\"country_code\":\"+47\",\"price\":34000},{\"country_name\":\"ترکیه\",\"flag\":\"tr\",\"availbale\":300,\"country_code\":\"+90\",\"price\":17000},{\"country_name\":\"ایتالیا\",\"flag\":\"it\",\"availbale\":110,\"country_code\":\"+39\",\"price\":29000},{\"country_name\":\"هلند\",\"flag\":\"nl\",\"availbale\":90,\"country_code\":\"+31\",\"price\":32000},{\"country_name\":\"نیوزیلند\",\"flag\":\"nz\",\"availbale\":20,\"country_code\":\"+64\",\"price\":37000},{\"country_name\":\"کره جنوبی\",\"flag\":\"kr\",\"availbale\":55,\"country_code\":\"+82\",\"price\":42000}]}';
 
     numbers = JSON.parse(numbers)['numbers'];
 
