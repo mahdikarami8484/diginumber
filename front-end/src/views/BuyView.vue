@@ -47,8 +47,6 @@
 
     import { ref, onMounted, markRaw } from 'vue';
 
-    var loaded_component = 0;
-
     const loading = ref(true);
 
     const nFormat = new Intl.NumberFormat(undefined);

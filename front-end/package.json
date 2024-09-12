@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lottie-web": "^5.12.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
@@ -19,6 +20,7 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.44",
     "tailwindcss": "^3.4.10",
+    "typescript": "^5.6.2",
     "vite": "^5.3.1"
   }
 }
