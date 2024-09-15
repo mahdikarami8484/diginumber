@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { useUserStore } from '@/stores/user'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,8 +37,32 @@ const router = createRouter({
       path: '/myNumbers',
       name: 'myNumbers',
       component: () => import('../views/MyNumbersView.vue')
+    },
+    {
+      path: '/enterNumber',
+      name: 'enterNumber',
+      component: () => import('../views/EnterNumberView.vue')
+    },
+    {
+      path: '/verifyNumber',
+      name: 'verifyNumber',
+      component: () => import('../views/VerifyNumberView.vue')
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  const userStore = useUserStore();
+  
+  if (userStore.phone === null && to.name !== 'enterNumber') {
+    next({ name: 'enterNumber' });
+  } else if ( !userStore.verifiedPhone && userStore.phone !== null  && to.name !== 'verifyNumber') {
+    next({ name: 'verifyNumber' });
+  } else if ((userStore.phone !== null && userStore.verifiedPhone) && (to.name === 'enterNumber' || to.name === 'verifyNumber')) {
+    next({ name: 'buy' });
+  } else {
+    next();
+  }
+});
 
 export default router

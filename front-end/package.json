@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "pages-build": "vite build --base=/DigiNumber/",
+    "pages-build": "vite build --outDir=diginumber/ --base=/diginumber/",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 <template>
     <Loading v-if="loading"/>
     <div v-once v-else class="mb-36 scroll-smooth no-scrollbar">
-        <div dir="rtl" class="bg-purple-900 w-11/12 m-auto mt-4 flex text-white p-4 rounded-md justify-start gap-8 mb-5 hover:box-shadow load-component cursor-pointer duration-300" :style="'animation-delay: '+3*(loaded_component++/10 - 0.1)+'s'">
+        <div dir="rtl" class="bg-purple-900 w-11/12 m-auto mt-4 flex text-white p-4 rounded-md justify-start gap-8 mb-5 hover:box-shadow load-component cursor-pointer duration-300">
             <div class="flex gap-2 justify-center">
                 <IconEarth class=""/>
                 <p class="samim-font"> کشور </p>

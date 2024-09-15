@@ -1,8 +1,7 @@
 @font-face {
     font-family: samim;
     src:
-        url("Samim.ttf") format("truetype"),
-        url("Samim.woff") format("woff");
+        url("Samim.woff2") format("woff2");
 }
 
 .samim-font {
@@ -12,8 +11,7 @@
 @font-face {
     font-family: samimfd;
     src:
-        url("Farsi-Digits/Samim-FD.ttf") format("truetype"),
-        url("Farsi-Digits/Samim-FD.woff") format("woff");
+        url("Farsi-Digits/Samim-FD.woff2") format("woff2");
 }
 
 .samim-fd-font {

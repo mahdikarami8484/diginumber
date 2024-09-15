@@ -26,7 +26,7 @@
         <router-link to="/wallet" class="bg-purple-900 flex flex-col items-center rounded-t-md justify-center h-full py-2 gap-1 w-1/5 samim-fd-font hover:scale-105 hover hover:rounded-t-md cursor-pointer hover:bg-purple-950 duration-500 hover:box-shadow-bottom-button load-bottom-menu" :class="route_name == 'wallet' ? 'rounded-t-md scale-105 bg-purple-950 box-shadow-bottom-button' : ''">
             <IconWallet/>
             <p class="text-xs">
-                {{ money }} 
+                {{ userStore.balance }} 
                 تومان
             </p>
         </router-link>
@@ -48,8 +48,11 @@ import { ref } from 'vue'
 import {useRoute} from 'vue-router'
 import {computed} from 'vue'
 
+import { useUserStore } from "@/stores/user"
+
+const userStore = useUserStore()
+
 const nFormat = new Intl.NumberFormat(undefined);
-const money = ref(nFormat.format(52000))
 
 const route=useRoute();
 

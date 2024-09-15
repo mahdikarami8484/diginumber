@@ -2,7 +2,7 @@ import './assets/base.css'
 import './assets/custom.css'
 import './assets/fonts.css'
 
-import { createApp } from 'vue'
+import { createApp, nextTick } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
@@ -32,3 +32,10 @@ app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
+
+nextTick(() => {
+  const loadingElement = document.getElementById('loading');
+  if (loadingElement) {
+    loadingElement.style.display = 'none';
+  }
+});

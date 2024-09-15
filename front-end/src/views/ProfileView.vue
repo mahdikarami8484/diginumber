@@ -6,10 +6,10 @@
                 <div class="rounded-full flex flex-row-reverse items-center gap-3"> 
                     <img class="rounded-full w-16 h-16" :src="img_src" alt="profile">
                     <div class="flex flex-col gap-1 mt-4">
-                        <p dir='rtl' class="samim-font mt-1"> {{ first_name + last_name }} </p>
+                        <p dir='rtl' class="samim-font mt-1"> {{ userStore.first_name +" "+ userStore.last_name }} </p>
                         <div dir='rtl' class="flex justify-center gap-1">
                             <p class="text-xs samim-font">شناسه کاربری : </p>
-                            <p class="text-xs">{{  user_id  }}</p>
+                            <p class="text-xs">{{  userStore.user_id  }}</p>
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div dir='rtl' class="flex items-center gap-2">
                         <IconUser class="-mt-1"/>
                         <p class="samim-font">نام کاربری : </p>
-                        <p :class="username == null ? 'samim-font' : ''"> {{ username == null ? 'بدون نام کاربری' : username + '@' }} </p>
+                        <p :class="userStore.username == null ? 'samim-font' : ''"> {{ userStore.username ? `${userStore.username}@` : 'بدون نام کاربری' }} </p>
                     </div>
             </div>
 
@@ -26,7 +26,7 @@
                 <div dir='rtl' class="flex items-center gap-2">
                     <IconPhone class='-mt-1'/>
                     <p class="samim-font">شماره موبایل : </p>
-                    <p> 09132867898 </p>
+                    <p> {{ userStore.phone }} </p>
                 </div>
             </div>
 
@@ -47,17 +47,15 @@
 
     import { ref, onMounted } from 'vue';
 
+    import { useUserStore } from '@/stores/user';
+
+    const userStore = useUserStore()
+
     const loading = ref(true);
 
     const loaded_component = 0;
 
-    const web_app = window.Telegram.WebApp;
-    const init_data_unsafe = web_app.initDataUnsafe;
-    const user = init_data_unsafe.user;
-    const user_id = user['id'];
-    const first_name = user['first_name'];
-    const last_name = user['last_name'];
-    const username = user['username'];
+
 
     const img_src = ref("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg");
 

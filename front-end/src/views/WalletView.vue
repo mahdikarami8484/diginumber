@@ -3,7 +3,7 @@
         <div dir='rtl' class="bg-purple-900 rounded-md text-white px-4 pt-10 pb-5 m-auto mt-12 w-11/12 load-component" style="hover:" :style="'animation-delay: '+3*(loaded_component++/10 - 0.1)+'s'">
             <div class="bg-purple-700 rounded-md p-3 w-8/12 m-auto flex gap-2 justify-center text-lg hover:scale-105 shadow cursor-pointer items-center duration-300">
                 <IconBanknote class="w-8 h-8 -mr-1"/>
-                <p class="samim-font samim-fd-font">{{ nFormat.format(balance) }}</p>
+                <p class="samim-font samim-fd-font">{{ nFormat.format(userStore.balance) }}</p>
                 <p class="samim-font">تومان</p> 
             </div>
 
@@ -44,19 +44,17 @@
     import IconDeposit from '@/components/icons/IconDeposit.vue';
     import IconInviteFriend from '@/components/icons/IconInviteFriend.vue';
 
+    import { useUserStore } from '@/stores/user';
+
+    const userStore = useUserStore()
+
     const loaded_component = 0;
 
     const nFormat = new Intl.NumberFormat(undefined);
-    const balance = ref(52000);
-
-    const web_app = window.Telegram.WebApp;
-    const init_data_unsafe = web_app.initDataUnsafe;
-    const user = init_data_unsafe.user;
-    const user_id = user['id'];
 
     const inviteFriend = () => {
         var message = "سلام. من تو را به ربات دیجی نامبر دعوت می کنم.";
-        const link = `t.me/diginumber_bbot/myapp?ref=${user_id}`;
+        const link = `t.me/diginumber_bbot/myapp?ref=${userStore.user_id}`;
         var telegramLink = `tg://msg_url?url=${link}&text=${message}`;
         telegramLink = encodeURI(telegramLink);
         window.open(telegramLink, '_blank');

@@ -1,6 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { RouterLink, RouterView } from 'vue-router';
+import { ref, onMounted, computed, nextTick, watch } from 'vue';
+import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router';
+
 import BottomMenu from './components/BottomMenu.vue';
 import Loading from './components/Loading.vue';
 
@@ -8,11 +9,30 @@ const loading = ref(true);
 const loadAssets = async () => {
   // Load fonts
   await document.fonts.ready;
-  loading.value = false;
+  await nextTick();
+  loading.value = false
 }
 
-onMounted(() => {
-  loadAssets();
+const router = useRouter();
+const route = useRoute()
+
+var hide_bottom_menu = true;
+
+hide_bottom_menu = computed(() => {
+   return ['enterNumber', 'verifyNumber'].includes(route.name);
+});
+
+onMounted(async () => {
+  await loadAssets();
+});
+
+router.beforeEach((to, from, next) => {
+  loading.value = true;
+  next();
+});
+
+router.afterEach(() => {
+  loading.value = false;
 });
 
 </script>
@@ -23,8 +43,10 @@ onMounted(() => {
 
 <div v-else>
   <RouterView />
+ 
   
-  <BottomMenu />
 </div>
+
+<BottomMenu v-if="!hide_bottom_menu" />
 
 </template>
