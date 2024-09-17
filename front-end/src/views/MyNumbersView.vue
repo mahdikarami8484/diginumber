@@ -118,7 +118,7 @@ const refresh = () => {
 const get_time_value = ref("00:00");
 
 const get_time = () => {
-    if((0.25*60 - (time() - number.value.time)) >= 0)
+    if(number.value !==null && ((0.25*60 - (time() - number.value.time)) >= 0))
     {
         get_time_value.value = show_time(0.25*60 - (time() - number.value.time))
     }else {
