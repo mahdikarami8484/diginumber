@@ -1,5 +1,5 @@
 @keyframes load-component {
-    from { transform: translateY(-200px); opacity: 0.8};
+    from { transform: translateY(-200px); opacity: 0.8}
     99% { opacity: 1 }
     to { transform: translateY(0px); opacity: 1}
 }
@@ -17,7 +17,7 @@
 }
 
 @keyframes load-bottom-menu {
-    from { transform: translateX(200px); opacity: 0.8};
+    from { transform: translateX(200px); opacity: 0.8}
     99% { opacity: 1 }
     to { transform: translateX(0px); opacity: 1}
 }

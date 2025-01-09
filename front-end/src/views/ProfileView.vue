@@ -2,7 +2,7 @@
     <Loading v-if="loading" />
     <div v-else>
         <div class="text-white w-full mt-24">
-            <div class="bg-purple-900 rounded-md p-4 w-11/12 mt-6 mx-auto flex flex-col items-end  duration-300 hover:box-shadow hover:scale-105 load-component" :style="'animation-delay: '+3*(loaded_component++/10 - 0.1)+'s'">
+            <div class="bg-purple-900 rounded-md p-4 w-11/12 mt-6 mx-auto flex flex-col items-end  duration-300 hover:box-shadow hover:scale-105 load-component" :style="'animation-delay: '+3*(0/10 - 0.1)+'s'">
                 <div class="rounded-full flex flex-row-reverse items-center gap-3"> 
                     <img class="rounded-full w-16 h-16" :src="img_src" alt="profile">
                     <div class="flex flex-col gap-1 mt-4">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-purple-900 rounded-md p-4 w-11/12 mt-12 mx-auto flex flex-col items-end hover:scale-105 duration-300 hover:box-shadow load-component" :style="'animation-delay: '+3*(loaded_component++/10 - 0.1)+'s'">
+            <div class="bg-purple-900 rounded-md p-4 w-11/12 mt-12 mx-auto flex flex-col items-end hover:scale-105 duration-300 hover:box-shadow load-component" :style="'animation-delay: '+3*(1/10 - 0.1)+'s'">
                     <div dir='rtl' class="flex items-center gap-2">
                         <IconUser class="-mt-1"/>
                         <p class="samim-font">نام کاربری : </p>
@@ -22,7 +22,7 @@
                     </div>
             </div>
 
-            <div class="bg-purple-900 rounded-md p-4 w-11/12 mt-6 mx-auto flex flex-col items-end duration-300 hover:box-shadow load-component hover:scale-105" :style="'animation-delay: '+3*(loaded_component++/10 - 0.1)+'s'">
+            <div class="bg-purple-900 rounded-md p-4 w-11/12 mt-6 mx-auto flex flex-col items-end duration-300 hover:box-shadow load-component hover:scale-105" :style="'animation-delay: '+3*(2/10 - 0.1)+'s'">
                 <div dir='rtl' class="flex items-center gap-2">
                     <IconPhone class='-mt-1'/>
                     <p class="samim-font">شماره موبایل : </p>
@@ -31,7 +31,7 @@
             </div>
 
            
-            <div class="bg-purple-900 w-6/12 flex justify-center items-center flex-row-reverse gap-2 mt-24 duration-300 hover:bg-purple-950 hover:scale-105 p-4 text-white m-auto rounded-md cursor-pointer group hover:box-shadow load-component" :style="'animation-delay: '+3*(loaded_component++/10 - 0.1)+'s'">
+            <div class="bg-purple-900 w-6/12 flex justify-center items-center flex-row-reverse gap-2 mt-24 duration-300 hover:bg-purple-950 hover:scale-105 p-4 text-white m-auto rounded-md cursor-pointer group hover:box-shadow load-component" :style="'animation-delay: '+3*(3/10 - 0.1)+'s'">
                 <IconSupport class="duration-300"/>
                 <p class="samim-font duration-300">پشتیبانی</p>
             </div>
@@ -52,10 +52,6 @@
     const userStore = useUserStore()
 
     const loading = ref(true);
-
-    const loaded_component = 0;
-
-
 
     const img_src = ref("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg");
 

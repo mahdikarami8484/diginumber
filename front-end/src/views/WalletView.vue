@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div dir='rtl' class="bg-purple-900 rounded-md text-white px-4 pt-10 pb-5 m-auto mt-12 w-11/12 load-component" style="hover:" :style="'animation-delay: '+3*(loaded_component++/10 - 0.1)+'s'">
+        <div dir='rtl' class="bg-purple-900 rounded-md text-white px-4 pt-10 pb-5 m-auto mt-12 w-11/12 load-component" style="hover:" :style="'animation-delay: '+3*(0/10 - 0.1)+'s'">
             <div class="bg-purple-700 rounded-md p-3 w-8/12 m-auto flex gap-2 justify-center text-lg hover:scale-105 shadow cursor-pointer items-center duration-300">
                 <IconBanknote class="w-8 h-8 -mr-1"/>
                 <p class="samim-font samim-fd-font">{{ nFormat.format(userStore.balance) }}</p>
@@ -17,7 +17,7 @@
                 <p class="samim-font">دعوت از دوستان</p>
             </div>
         </div>
-        <div dir='rtl' class="bg-purple-900 rounded-md text-white p-5 m-auto mt-8 w-11/12 load-component mb-20" :style="'animation-delay: '+3*(loaded_component++/10 - 0.1)+'s'">
+        <div dir='rtl' class="bg-purple-900 rounded-md text-white p-5 m-auto mt-8 w-11/12 load-component mb-20" :style="'animation-delay: '+3*(1/10 - 0.1)+'s'">
             <div dir="rtl" class="">
                 <p class="samim-font">وارد کردن کد هدیه :</p>
             </div>
@@ -47,8 +47,6 @@
     import { useUserStore } from '@/stores/user';
 
     const userStore = useUserStore()
-
-    const loaded_component = 0;
 
     const nFormat = new Intl.NumberFormat(undefined);
 
