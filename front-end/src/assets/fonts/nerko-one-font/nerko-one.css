@@ -1,9 +1,0 @@
-@font-face {
-    font-family: nerko-one;
-    src:
-        url("NerkoOne-Regular.ttf") format("truetype"),
-}
-
-.nerko-one-font {
-    font-family: 'nerko-one';
-} 
