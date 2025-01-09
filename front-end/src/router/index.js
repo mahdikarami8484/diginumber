@@ -1,5 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useUserStore } from '@/stores/user'
+import BuyView from '@/views/BuyView.vue';
+import AboutView from '@/views/AboutView.vue';
+import ProfileView from '@/views/ProfileView.vue';
+import WalletView from '@/views/WalletView.vue';
+import MessageView from '@/views/MessageView.vue';
+import MyNumbersView from '../views/MyNumbersView.vue';
+import EnterNumberView from '@/views/EnterNumberView.vue';
+import VerifyNumberView from '@/views/VerifyNumberView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +16,7 @@ const router = createRouter({
       path: '/',
       alias: '/buy',
       name: 'buy',
-      component: () => import('../views/BuyView.vue')
+      component: BuyView
     },
     {
       path: '/about',
@@ -16,37 +24,37 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: AboutView
     },
     {
       path: '/profile',
       name: 'profile',
-      component: () => import('../views/ProfileView.vue')
+      component: ProfileView
     },
     {
       path: '/wallet',
       name: 'wallet',
-      component: () => import('../views/WalletView.vue')
+      component: WalletView
     },
     {
       path: '/message',
       name: 'message',
-      component: () => import('../views/MessageView.vue')
+      component: MessageView
     },
     {
       path: '/myNumbers',
       name: 'myNumbers',
-      component: () => import('../views/MyNumbersView.vue')
+      component: MyNumbersView
     },
     {
       path: '/enterNumber',
       name: 'enterNumber',
-      component: () => import('../views/EnterNumberView.vue')
+      component: EnterNumberView
     },
     {
       path: '/verifyNumber',
       name: 'verifyNumber',
-      component: () => import('../views/VerifyNumberView.vue')
+      component: VerifyNumberView
     }
   ]
 })
